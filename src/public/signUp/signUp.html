@@ -51,23 +51,20 @@
           ng-model="signUpCtrl.user.menuNumber">
           <span ng-if="signUpCtrl.phone.$touched">
             Menu number must be entered
-          </span> </div>
+          </span>
+          <span ng-if="signUpCtrl.serverError">
+            No such menu number exists
+          </span>  </div>
           <br>
 
       <button
         ng-disabled="regForm.$invalid"
         ng-click="signUpCtrl.submit()">Submit</button>
-
-        <div style="margin-top: 10px;">
-          Form valid? {{ regForm.$valid }}
-        </div>
     </form>
   </fieldset>
 
   <div id="info" ng-if="signUpCtrl.completed">
-    Username: {{ signUpCtrl.user.username}} <br>
-    Email: {{ signUpCtrl.user.email}} <br>
-    Phone: {{ signUpCtrl.user.phone }}
+    Your information has been saved
   </div>
 
 </div>
