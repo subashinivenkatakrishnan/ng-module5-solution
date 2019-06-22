@@ -4,9 +4,10 @@
 angular.module('public')
 .controller('MyInfoController', MyInfoController);
 
-MyInfoController.$inject = ["MenuService"];
-function MyInfoController(MenuService) {
+MyInfoController.$inject = ["MenuService", 'ApiPath'];
+function MyInfoController(MenuService, ApiPath) {
   var myInfoCtrl = this;
+  myInfoCtrl.basePath = ApiPath;
   myInfoCtrl.registeredData = MenuService.registeredData;
 }
 

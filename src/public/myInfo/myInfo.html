@@ -8,7 +8,7 @@
   <div>Phone:<span>{{myInfoCtrl.registeredData.phone}}</span></div>
   <div> Favorite dish</div>
   <div class="category-tile">
-    <img width="200" height="200" ng-src="images/menu/{{myInfoCtrl.registeredData.menuData.category_short_name}}/{{myInfoCtrl.registeredData.menuData.category_short_name}}.jpg" alt="{{myInfoCtrl.registeredData.menuData.name}}">
+    <img width="200" height="200" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.registeredData.menuData.short_name}}.jpg" alt="{{myInfoCtrl.registeredData.menuData.name}}">
     <span>{{myInfoCtrl.registeredData.menuData.name}}</span>
 
   </div>
