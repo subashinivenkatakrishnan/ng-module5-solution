@@ -24,7 +24,6 @@ signUpCtrl.serverError = false;
         }, function (error) {
           signUpCtrl.serverError = true;
         });
-
   };
 }
 

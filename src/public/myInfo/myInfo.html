@@ -1,19 +1,16 @@
 <div class="container">
-  <h2 id="menu-categories-title" class="text-center">Menu Categories</h2>
-  <div class="text-center">
-    Substituting white rice with brown rice or fried rice after 3:00pm will be $1.50 for a pint and $2.50 for a quart.
-  </div>
+  <h2 id="menu-categories-title" class="text-center">Registered Information</h2>
+
 <div ng-if="myInfoCtrl.registeredData">
-  <!-- <menu-category ng-repeat="menuCategory in menuCtrl.menuCategories"
-                 category="menuCategory">
-  </menu-category> -->
-  Data is present
+  <div class="category-tile">
+    <img width="200" height="200" ng-src="images/menu/{{myInfoCtrl.registeredData.category_short_name}}/{{myInfoCtrl.registeredData.category_short_name}}.jpg" alt="{{myInfoCtrl.registeredData.name}}">
+    <span>{{myInfoCtrl.registeredData.name}}</span>
+
+  </div>
+  <div>{{myInfoCtrl.registeredData.description}}</div>
 
 </div>
 
 <div ng-if="!myInfoCtrl.registeredData">
-  <!-- <menu-category ng-repeat="menuCategory in menuCtrl.menuCategories"
-                 category="menuCategory">
-  </menu-category> -->
 Not Signed Up Yet.<a ui-sref="public.signUp"><div><span> Sign up Now!</span></div></a>
 </div>
