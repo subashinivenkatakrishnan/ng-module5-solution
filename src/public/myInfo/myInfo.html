@@ -2,12 +2,17 @@
   <h2 id="menu-categories-title" class="text-center">Registered Information</h2>
 
 <div ng-if="myInfoCtrl.registeredData">
+  <div>First name:<span>{{myInfoCtrl.registeredData.firstname}}</span></div>
+  <div>Last name:<span>{{myInfoCtrl.registeredData.lastname}}</span></div>
+  <div>Email:<span>{{myInfoCtrl.registeredData.email}}</span></div>
+  <div>Phone:<span>{{myInfoCtrl.registeredData.phone}}</span></div>
+  <div> Favorite dish</div>
   <div class="category-tile">
-    <img width="200" height="200" ng-src="images/menu/{{myInfoCtrl.registeredData.category_short_name}}/{{myInfoCtrl.registeredData.category_short_name}}.jpg" alt="{{myInfoCtrl.registeredData.name}}">
-    <span>{{myInfoCtrl.registeredData.name}}</span>
+    <img width="200" height="200" ng-src="images/menu/{{myInfoCtrl.registeredData.menuData.category_short_name}}/{{myInfoCtrl.registeredData.menuData.category_short_name}}.jpg" alt="{{myInfoCtrl.registeredData.menuData.name}}">
+    <span>{{myInfoCtrl.registeredData.menuData.name}}</span>
 
   </div>
-  <div>{{myInfoCtrl.registeredData.description}}</div>
+  <div>{{myInfoCtrl.registeredData.menuData.description}}</div>
 
 </div>
 

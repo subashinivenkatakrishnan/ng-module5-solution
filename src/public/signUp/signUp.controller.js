@@ -8,19 +8,17 @@ SignUpController.$inject = ["MenuService"];
 function SignUpController(MenuService) {
   var signUpCtrl = this;
   signUpCtrl.submit = function () {
-    signUpCtrl.completed = false;
-
-signUpCtrl.serverError = false;
-    console.log(signUpCtrl.user.firstname);
-    console.log(signUpCtrl.user.lastname);
-      console.log(signUpCtrl.user.email);
-        console.log(signUpCtrl.user.phone);
-        console.log(signUpCtrl.user.menuNumber);
+        signUpCtrl.completed = false;
+        signUpCtrl.serverError = false;
         let serviceRequest =  MenuService.getShortName(signUpCtrl.user.menuNumber);
         serviceRequest.then(function (response) {
-          console.log(response);
           signUpCtrl.completed = true;
-          MenuService.registeredData = response.data;
+          MenuService.registeredData = {};
+          MenuService.registeredData.menuData = response.data;
+          MenuService.registeredData.firstname = signUpCtrl.user.firstname;
+          MenuService.registeredData.lastname = signUpCtrl.user.lastname;
+          MenuService.registeredData.email = signUpCtrl.user.email;
+          MenuService.registeredData.phone = signUpCtrl.user.phone;
         }, function (error) {
           signUpCtrl.serverError = true;
         });
