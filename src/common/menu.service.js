@@ -28,7 +28,7 @@ function MenuService($http, ApiPath) {
   };
 
   service.getShortName = function (shortName) {
-    let name = shortName + '.json';
+    let name = shortName.toUpperCase() + '.json';
     return $http.get(ApiPath + '/menu_items/'+ name);
   }
 
